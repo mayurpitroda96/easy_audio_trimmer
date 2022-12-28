@@ -8,7 +8,7 @@
   <img alt="GitHub license" src="https://img.shields.io/github/license/mayurpitroda96/easy_audio_trimmer?style=flat-square">
 </a>
 
-<h4 align="center">A Flutter package for audio trimming</h4>
+<h4 align="center">A Flutter package for easy audio trimming</h4>
 
 ### Features
 
@@ -21,7 +21,7 @@
 The [example app](https://github.com/mayurpitroda96/easy_audio_trimmer/tree/master/example) running on android OnePlus 7:
 
 <p align="center">
-  <img src="https://github.com/mayurpitroda96/easy_audio_trimmer/raw/main/screenshots/demo.gif" alt="Trimmer"/>
+  <img src="https://github.com/mayurpitroda96/easy_audio_trimmer/blob/master/screenshots/demo.gif" alt="Trimmer"/>
 </p>
 
 ## Usage
@@ -239,7 +239,7 @@ class _AudioTrimmerViewState extends State<AudioTrimmerView> {
     });
   }
 
-  _saveVideo() {
+  _saveAudio() {
     setState(() {
       _progressVisibility = true;
     });
@@ -290,7 +290,7 @@ class _AudioTrimmerViewState extends State<AudioTrimmerView> {
                       ),
                       ElevatedButton(
                         onPressed:
-                            _progressVisibility ? null : () => _saveVideo(),
+                            _progressVisibility ? null : () => _saveAudio(),
                         child: const Text("SAVE"),
                       ),
                       AudioViewer(trimmer: _trimmer),
