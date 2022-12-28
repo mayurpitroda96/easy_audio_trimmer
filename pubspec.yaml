@@ -9,7 +9,7 @@ environment:
 
 dependencies:
   audioplayers: ^1.1.1
-  ffmpeg_kit_flutter: 5.1.0-LTS
+  ffmpeg_kit_flutter: ^5.1.0-LTS
   flutter:
     sdk: flutter
   intl: ^0.17.0
