@@ -21,7 +21,7 @@
 The [example app](https://github.com/mayurpitroda96/easy_audio_trimmer/tree/master/example) running on android OnePlus 7:
 
 <p align="center">
-  <img src="https://github.com/mayurpitroda96/easy_audio_trimmer/blob/master/screenshots/demo.gif" alt="Trimmer"/>
+  <img src="https://raw.githubusercontent.com/mayurpitroda96/easy_audio_trimmer/master/screenshots/demo.gif" alt="Trimmer"/>
 </p>
 
 ## Usage
