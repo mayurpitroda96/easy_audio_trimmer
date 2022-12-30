@@ -8,13 +8,18 @@
   <img alt="GitHub license" src="https://img.shields.io/github/license/mayurpitroda96/easy_audio_trimmer?style=flat-square">
 </a>
 
-<h4 align="center">A Flutter package for easy audio trimming</h4>
+<h4 align="center">Welcome to Easy Audio Trimmer! This is a Flutter package that allows you to easily trim audio files within your Flutter app.</h4>
 
 ### Features
 
-* Customizable audio trimmer.
-* Audio playback control.
 * Retrieving and storing audio file.
+* Trim audio files within your Flutter app
+* Specify the start and end times for the trimmed audio file
+* Audio playback control.
+* Trimmed audio files are saved on the device
+* Easy to use with a simple function call
+* Compatible with most audio file formats (mp3, wav, aac, etc.)
+* Support for both iOS and Android platforms
 
 ## Example
 
