@@ -377,6 +377,11 @@ On Android, if you still face the same issue, try adding the following to the `<
 | Agochar Tech LLP | https://agochar.com/ |
 
 
+### Credit and Acknowledgment
+
+"We would like to thank the contributors to the Video Trimmer repository for their invaluable assistance in creating this project. We used code from the Video Trimmer tool to implement the trimming and editing features in this project, and we are grateful for the opportunity to use it in our work. Thank you to the team behind Video Trimmer for their valuable contributions."
+
+
 ## License
 
 Copyright (c) 2022 Mayur Pitroda
