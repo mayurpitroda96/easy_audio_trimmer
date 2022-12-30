@@ -1,3 +1,7 @@
+## 1.0.1+2
+
+* Added more description.
+
 ## 1.0.1+1
 
 * Trimmer Demo Preview Added.

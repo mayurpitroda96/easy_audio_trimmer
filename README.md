@@ -12,10 +12,10 @@
 
 ### Features
 
-* Retrieving and storing audio file.
 * Trim audio files within your Flutter app
 * Specify the start and end times for the trimmed audio file
 * Audio playback control.
+* Retrieving and storing audio file.
 * Trimmed audio files are saved on the device
 * Easy to use with a simple function call
 * Compatible with most audio file formats (mp3, wav, aac, etc.)
