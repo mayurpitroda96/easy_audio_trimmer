@@ -7,7 +7,7 @@ import Foundation
 
 import audioplayers_darwin
 import ffmpeg_kit_flutter
-import path_provider_macos
+import path_provider_foundation
 
 func RegisterGeneratedPlugins(registry: FlutterPluginRegistry) {
   AudioplayersDarwinPlugin.register(with: registry.registrar(forPlugin: "AudioplayersDarwinPlugin"))
