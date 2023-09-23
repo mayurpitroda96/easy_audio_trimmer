@@ -10,11 +10,11 @@ dependencies:
   flutter:
     sdk: flutter
   
-  audioplayers: ^4.1.0
-  ffmpeg_kit_flutter: ^5.1.0-LTS
-  intl: ^0.18.1
-  path: ^1.8.2
-  path_provider: ^2.0.11
+  audioplayers: 5.1.0
+  ffmpeg_kit_flutter: 6.0.3
+  intl: 0.18.1
+  path: ^1.8.3
+  path_provider: ^2.1.1
 
 dev_dependencies:
   flutter_test:
