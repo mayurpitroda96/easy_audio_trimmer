@@ -1,3 +1,7 @@
+## 1.0.1+4
+
+* Update plugin versions
+
 ## 1.0.1+3
 
 * Update plugin versions
