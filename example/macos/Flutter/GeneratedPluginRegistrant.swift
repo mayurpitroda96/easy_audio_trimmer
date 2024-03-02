@@ -6,7 +6,7 @@ import FlutterMacOS
 import Foundation
 
 import audioplayers_darwin
-import ffmpeg_kit_flutter
+import ffmpeg_kit_flutter_audio
 import path_provider_foundation
 
 func RegisterGeneratedPlugins(registry: FlutterPluginRegistry) {
