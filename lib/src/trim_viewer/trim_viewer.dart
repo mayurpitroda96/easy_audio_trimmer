@@ -142,7 +142,7 @@ class TrimViewer extends StatefulWidget {
   final bool allowAudioSelection;
 
   const TrimViewer(
-      {Key? key,
+      {super.key,
       required this.trimmer,
       this.maxAudioLength = const Duration(milliseconds: 0),
       this.viewerWidth = 50 * 8,
@@ -158,8 +158,7 @@ class TrimViewer extends StatefulWidget {
       this.areaProperties = const TrimAreaProperties(),
       this.backgroundColor,
       this.allowAudioSelection = true,
-      this.barColor})
-      : super(key: key);
+      this.barColor});
 
   @override
   State<TrimViewer> createState() => _TrimViewerState();
