@@ -66,12 +66,10 @@ class _AudioTrimmerViewState extends State<AudioTrimmerView> {
 
   @override
   Widget build(BuildContext context) {
-    return WillPopScope(
-      onWillPop: () async {
-        if (Navigator.of(context).userGestureInProgress) {
-          return false;
-        } else {
-          return true;
+    return PopScope(
+      onPopInvoked: (didPop) {
+        if (didPop) {
+          Navigator.of(context).userGestureInProgress;
         }
       },
       child: Scaffold(
