@@ -19,6 +19,7 @@ class FileFormat {
   static const FileFormat avi = FileFormat._(4);
   static const FileFormat wmv = FileFormat._(5);
   static const FileFormat gif = FileFormat._(6);
+  static const FileFormat m4a = FileFormat._(7);
 
   static const List<FileFormat> values = <FileFormat>[mp3];
 
@@ -26,6 +27,13 @@ class FileFormat {
   String toString() {
     return const <int, String>{
       0: '.mp3',
+      1: '.mkv',
+      2: '.mov',
+      3: '.flv',
+      4: '.avi',
+      5: '.wmv',
+      6: '.gif',
+      7: '.m4a',
     }[index]!;
   }
 }
