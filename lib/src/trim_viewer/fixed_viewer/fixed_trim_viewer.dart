@@ -380,6 +380,7 @@ class _FixedTrimViewerState extends State<FixedTrimViewer>
         _onStartDragged();
       }
     } else if (_dragType == EditorDragType.center) {
+      if (!widget.allowAudioSelection) return;
       _startCircleSize = widget.editorProperties.circleSizeOnDrag;
       _endCircleSize = widget.editorProperties.circleSizeOnDrag;
       if ((_startPos.dx + details.delta.dx >= 0) &&

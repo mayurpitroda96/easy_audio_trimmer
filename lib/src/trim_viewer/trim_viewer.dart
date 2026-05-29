@@ -166,31 +166,9 @@ class TrimViewer extends StatefulWidget {
 }
 
 class _TrimViewerState extends State<TrimViewer> with TickerProviderStateMixin {
-  bool? _isScrollableAllowed;
-
   @override
   void initState() {
     super.initState();
-    widget.trimmer.eventStream.listen((event) async {
-      if (event == TrimmerEvent.initialized) {
-        final totalDuration = await widget.trimmer.audioPlayer!.getDuration();
-        if (totalDuration == null) {
-          return;
-        }
-        final maxAudioLength = widget.maxAudioLength;
-
-        final paddingFraction = widget.paddingFraction;
-        final trimAreaDuration = Duration(
-            milliseconds: (maxAudioLength.inMilliseconds +
-                ((paddingFraction * maxAudioLength.inMilliseconds) * 2)
-                    .toInt()));
-
-        final shouldScroll = trimAreaDuration <= totalDuration &&
-            maxAudioLength.compareTo(const Duration(milliseconds: 0)) != 0;
-
-        setState(() => _isScrollableAllowed = shouldScroll);
-      }
-    });
   }
 
   @override
@@ -215,6 +193,6 @@ class _TrimViewerState extends State<TrimViewer> with TickerProviderStateMixin {
       ),
     );
 
-    return _isScrollableAllowed == null ? fixedTrimViewer : const SizedBox();
+    return fixedTrimViewer;
   }
 }

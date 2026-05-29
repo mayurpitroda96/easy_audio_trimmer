@@ -41,9 +41,8 @@ class _FileSelectorWidgetState extends State<FileSelectorWidget> {
       body: Center(
         child: ElevatedButton(
             onPressed: () async {
-              FilePickerResult? result = await FilePicker.platform.pickFiles(
+              FilePickerResult? result = await FilePicker.pickFiles(
                 type: FileType.audio,
-                allowCompression: false,
               );
               if (result != null) {
                 File file = File(result.files.single.path!);

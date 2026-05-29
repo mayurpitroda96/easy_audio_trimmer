@@ -6,7 +6,7 @@ import 'package:flutter/material.dart';
 class AudioTrimmerView extends StatefulWidget {
   final File file;
 
-  const AudioTrimmerView(this.file, {Key? key}) : super(key: key);
+  const AudioTrimmerView(this.file, {super.key});
   @override
   State<AudioTrimmerView> createState() => _AudioTrimmerViewState();
 }
@@ -37,7 +37,7 @@ class _AudioTrimmerViewState extends State<AudioTrimmerView> {
     });
   }
 
-  _saveAudio() {
+  void _saveAudio() {
     setState(() {
       _progressVisibility = true;
     });
@@ -45,6 +45,7 @@ class _AudioTrimmerViewState extends State<AudioTrimmerView> {
     _trimmer.saveTrimmedAudio(
       startValue: _startValue,
       endValue: _endValue,
+      storageDir: StorageDir.externalStorageDirectory,
       audioFileName: DateTime.now().millisecondsSinceEpoch.toString(),
       onSave: (outputPath) {
         setState(() {
@@ -76,9 +77,7 @@ class _AudioTrimmerViewState extends State<AudioTrimmerView> {
       },
       child: Scaffold(
         backgroundColor: Colors.white,
-        appBar: AppBar(
-          title: const Text("Audio Trimmer"),
-        ),
+        appBar: AppBar(title: const Text("Audio Trimmer")),
         body: isLoading
             ? const CircularProgressIndicator()
             : Center(
@@ -91,13 +90,15 @@ class _AudioTrimmerViewState extends State<AudioTrimmerView> {
                       Visibility(
                         visible: _progressVisibility,
                         child: LinearProgressIndicator(
-                          backgroundColor:
-                              Theme.of(context).primaryColor.withOpacity(0.5),
+                          backgroundColor: Theme.of(
+                            context,
+                          ).primaryColor.withValues(alpha: 0.5),
                         ),
                       ),
                       ElevatedButton(
-                        onPressed:
-                            _progressVisibility ? null : () => _saveAudio(),
+                        onPressed: _progressVisibility
+                            ? null
+                            : () => _saveAudio(),
                         child: const Text("SAVE"),
                       ),
                       Center(
@@ -106,13 +107,14 @@ class _AudioTrimmerViewState extends State<AudioTrimmerView> {
                           child: TrimViewer(
                             trimmer: _trimmer,
                             viewerHeight: 100,
-                            maxAudioLength: const Duration(seconds: 50),
+                            maxAudioLength: const Duration(seconds: 100),
                             viewerWidth: MediaQuery.of(context).size.width,
                             durationStyle: DurationStyle.FORMAT_MM_SS,
                             backgroundColor: Theme.of(context).primaryColor,
                             barColor: Colors.white,
                             durationTextStyle: TextStyle(
-                                color: Theme.of(context).primaryColor),
+                              color: Theme.of(context).primaryColor,
+                            ),
                             allowAudioSelection: true,
                             editorProperties: TrimEditorProperties(
                               circleSize: 10,
@@ -121,8 +123,9 @@ class _AudioTrimmerViewState extends State<AudioTrimmerView> {
                               borderRadius: 5,
                               circlePaintColor: Colors.pink.shade400,
                             ),
-                            areaProperties:
-                                TrimAreaProperties.edgeBlur(blurEdges: true),
+                            areaProperties: TrimAreaProperties.edgeBlur(
+                              blurEdges: true,
+                            ),
                             onChangeStart: (value) => _startValue = value,
                             onChangeEnd: (value) => _endValue = value,
                             onChangePlaybackState: (value) {
@@ -146,14 +149,14 @@ class _AudioTrimmerViewState extends State<AudioTrimmerView> {
                                 color: Theme.of(context).primaryColor,
                               ),
                         onPressed: () async {
-                          bool playbackState =
-                              await _trimmer.audioPlaybackControl(
-                            startValue: _startValue,
-                            endValue: _endValue,
-                          );
+                          bool playbackState = await _trimmer
+                              .audioPlaybackControl(
+                                startValue: _startValue,
+                                endValue: _endValue,
+                              );
                           setState(() => _isPlaying = playbackState);
                         },
-                      )
+                      ),
                     ],
                   ),
                 ),
