@@ -16,15 +16,14 @@ class FixedBarViewer extends StatelessWidget {
   /// For showing the bars generated from the audio,
   /// like a frame by frame preview
   const FixedBarViewer(
-      {Key? key,
+      {super.key,
       required this.audioFile,
       required this.audioDuration,
       required this.barHeight,
       required this.barWeight,
       required this.fit,
       this.backgroundColor,
-      this.barColor})
-      : super(key: key);
+      this.barColor});
 
   Stream<List<int?>> generateBars() async* {
     List<int> bars = [];
@@ -38,7 +37,6 @@ class FixedBarViewer extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    int i = 0;
     return StreamBuilder<List<int?>>(
       stream: generateBars(),
       builder: (context, snapshot) {
@@ -51,11 +49,6 @@ class FixedBarViewer extends StatelessWidget {
               crossAxisAlignment: CrossAxisAlignment.center,
               mainAxisAlignment: MainAxisAlignment.start,
               children: bars.map((int? height) {
-                // Color color = i >= barStartPosition / barWidth &&
-                //         i <= barEndPosition / barWidth
-                //     ? widget.wavActiveColor
-                //     : widget.wavDeactiveColor;
-                i++;
                 return Container(
                   color: barColor ?? Colors.black,
                   height: height?.toDouble(),

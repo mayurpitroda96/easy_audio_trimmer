@@ -1,4 +1,3 @@
-library easy_audio_trimmer;
 
 
 export 'package:easy_audio_trimmer/src/trimmer.dart';
